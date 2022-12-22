@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: #8EC5FC;
+background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+
+        }
+        *{
+            box-sizing: border-box;
+        }
+        #content{
+            display: flex;
+            justify-content: center;
+            position: relative;
+            top: 350px;
+        }
+        #button{
+            width: 450px;
+            height: 100px;
+            background-color: rgb(31, 31, 31);
+            color: white;
+        }
+        #button:hover{
+            transition: all 1s;
+            background-color: #0093E9;
+           
+            border: 0;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="content">   
+     <button id="button">START</button>
+    </div>
+    <script>
+        const button = document.getElementById("button");
+        function callback(){
+            let count = 0;
+        while(true){
+            const input_number = prompt("Guess number between 1-10");
+            const guessing_number = Math.ceil(Math.random()*10);
+            count++;
+            if(input_number == guessing_number){
+                alert("You won!");
+                console.log("This player won!");
+                break;
+            }
+            alert("Wrong! Try again.");
+            if(count == 3){
+                alert("You lost! Try again later.");
+                break;
+            }
+        }
+        }
+        button.addEventListener('click', callback);
+    </script>
+</body>
+</html>
